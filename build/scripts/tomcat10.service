@@ -1,0 +1,25 @@
+[Unit]
+Description=Apache Tomcat 10
+After=network.target
+
+[Service]
+Type=forking
+
+Environment="JAVA_HOME=/usr/jdk/latest"
+Environment="JAVA_OPTS=-Djava.security.egd=file:///dev/urandom"
+Environment="CATALINA_BASE=/opt/tomcat10"
+Environment="CATALINA_HOME=/opt/tomcat10"
+Environment="CATALINA_PID=/opt/tomcat10/temp/tomcat.pid"
+Environment="CATALINA_OPTS=-Xms1536M -Xmx1536M -server -XX:+UseParallelGC -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true"
+
+User=root
+Group=root
+
+ExecStart=/opt/tomcat10/bin/startup.sh
+ExecStop=/opt/tomcat10/bin/shutdown.sh
+
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
