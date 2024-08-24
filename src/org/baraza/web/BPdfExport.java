@@ -107,13 +107,14 @@ public class BPdfExport extends HttpServlet {
 			doc.setMargins(30, 30, 30, 30);
 			
 			doc.addTitle(view.getAttribute("name", "Report"));
-			if(colCount < 4) 
+			if(colCount < 4) {
 			    doc.setPageSize(PageSize.A4);
-			else 
-			    // jb adjust for Code Tuner analysis
+			    }
+			else {			
 			    doc.setPageSize(PageSize.A4);
-			
-			doc.open();
+			    }  
+			// jb adjust for Code Tuner analysis
+			//doc.open();
 			
 			PdfPTable table = new PdfPTable(colCount);
 			table.setWidthPercentage(100);
