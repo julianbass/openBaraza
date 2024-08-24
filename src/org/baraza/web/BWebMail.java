@@ -39,9 +39,11 @@ public class BWebMail {
 		try {
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(fromaddr));
+			/* jb change due to Code Tuner parser analysis problem
 			InternetAddress to[] = new InternetAddress[1];
 			to[0] = new InternetAddress(toaddr);
-			message.setRecipients(Message.RecipientType.TO, to);
+			message.setRecipients(Message.RecipientType.TO, to); */
+			message.setRecipients(Message.RecipientType.TO, new InternetAddress(toaddr) );
 			message.setSubject(subject);
 			message.setContent(content, "text/html");
 			Transport.send(message);
