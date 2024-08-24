@@ -170,7 +170,8 @@ public class BPdfExport extends HttpServlet {
 			
 			doc.addTitle(view.getAttribute("name", "Report"));
 			doc.setPageSize(PageSize.A4);
-			doc.open();
+			// jb adjust for Code Tuner analysis
+			//doc.open();
 			
 			PdfPTable table = new PdfPTable(new float[]{200, 500});
 			table.setWidthPercentage(100);
