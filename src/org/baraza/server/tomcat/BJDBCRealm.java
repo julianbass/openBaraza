@@ -71,7 +71,8 @@ public class BJDBCRealm extends DataSourceRealm {
 		String loginId = null;
 		try {
 			String mysql = "SELECT add_sys_login('" + userName + "')";
-			Connection db = open();
+			// jb adjust to enable Code Tuner analysis
+			//Connection db = open();
 			Statement st = db.createStatement();
 			ResultSet rs = st.executeQuery(mysql);
 			if(rs.next()) loginId = rs.getString(1);
