@@ -89,7 +89,8 @@ public class BJDBCRealm extends DataSourceRealm {
 		try {
 			String mysql = "UPDATE sys_logins SET login_ip = '" + userIP
 			+ "' WHERE sys_login_id = " + loginId;
-			Connection db = open();
+			// jb adjust to enable Code Tuner analysis
+			//Connection db = open();
 			Statement st = db.createStatement();
 			st.execute(mysql);
 			//db.commit();
@@ -103,7 +104,8 @@ public class BJDBCRealm extends DataSourceRealm {
 		String loginId = null;
 		try {
 			String mysql = "SELECT err_sys_login('" + userName + "', '" + userIP + "')";
-			Connection db = open();
+			// jb adjust to enable Code Tuner analysis
+			//Connection db = open();
 			Statement st = db.createStatement();
 			st.executeQuery(mysql);
 			//db.commit();
