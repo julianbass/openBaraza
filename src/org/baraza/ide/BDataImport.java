@@ -408,9 +408,8 @@ public class BDataImport extends JPanel implements ActionListener {
 					importData();
 				}
 			}
-		// jb adjustment to enable Code Tuner analysis
-		// is there an extra } here??
-		//}
+
+		}
 	}
 
 	public String formatFieldName(String fieldName) {
