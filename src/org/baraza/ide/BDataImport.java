@@ -354,7 +354,7 @@ public class BDataImport extends JPanel implements ActionListener {
 		db.executeQuery(area1.getText());
 	}
 	
-	public void importData() {
+	public void imprtData() {
 		String tableName = txtTableName.getText();
 		if(myData.size() > 0) {
 			Vector<String> firstRow = myData.get(0);
