@@ -1596,7 +1596,10 @@ public class BQuery {
 		return data;
 	}
 
-	public void importData(Vector<Vector<Object>> newData, Map<String, String> inParams)  {
+	// jb adjust for Code Tuner analysis
+	// follwoing removed by concatenate
+	// try changing name of method
+	public void imprtData(Vector<Vector<Object>> newData, Map<String, String> inParams)  {
 		for(int j = 0; j<newData.size(); j++) {
 			Vector<Object> newRow = newData.get(j);
 			if(!keyFieldData.contains(newRow.get(0).toString())) {
