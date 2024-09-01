@@ -384,7 +384,10 @@ public class BDataImport extends JPanel implements ActionListener {
 		}
 	}
 	
-	public void autoImport(int importType) {
+        // jb  adjustment to enable Code Tuner analysis
+        // following line deleted in concatenation
+        // try changing name of method
+	public void autoImprt(int importType) {
 		JFileChooser fc = new JFileChooser(projectDir);
 		fc.setDialogTitle("Open Resource File");
 		int returnVal = fc.showOpenDialog(this);
@@ -405,7 +408,9 @@ public class BDataImport extends JPanel implements ActionListener {
 					importData();
 				}
 			}
-		}
+		// jb adjustment to enable Code Tuner analysis
+		// is there an extra } here??
+		//}
 	}
 
 	public String formatFieldName(String fieldName) {
