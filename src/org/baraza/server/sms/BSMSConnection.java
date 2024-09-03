@@ -46,7 +46,8 @@ public class BSMSConnection implements CommPortOwnershipListener {
 			int rd = Integer.valueOf(datarate);
 
 			try {
-				port = (SerialPort)portId.open(this.getClass().getName(), 100);
+				// jb adjust to enable code tuner analysis
+                                //port = (SerialPort)portId.open(this.getClass().getName(), 100);
 				port.setSerialPortParams(rd, SerialPort.DATABITS_8, SerialPort.STOPBITS_1, SerialPort.PARITY_NONE);
 			} catch(PortInUseException ex) {
 				log.severe("Port already in use : " + ex);
